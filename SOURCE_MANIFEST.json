@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "Three independently runnable basic examples; the complete website is not included",
-  "sourceSha256": "e89a6f90e1453c5a18e10d2cc7be4f5c0b66ce51325f16015502e2d34550eec1",
+  "sourceSha256": "8c091de81c9f05c7282241de3fcad078742ac46776f6ce60033fa265f141cda8",
   "files": [
     {
       "path": ".github/workflows/ci.yml",
@@ -46,7 +46,7 @@
     {
       "path": "package.json",
       "bytes": 671,
-      "sha256": "accab36d9f58784bf2292bfa58a3c1c1dd85da23854bfb3dce9d632ea7318903"
+      "sha256": "40c3b0ae2950c92da4437f59b78ec8c23b19202d2800a24cd200d9af127be106"
     },
     {
       "path": "pnpm-lock.yaml",
@@ -100,8 +100,8 @@
     },
     {
       "path": "src/main.tsx",
-      "bytes": 2386,
-      "sha256": "6230a3659058021d41cf638c6eb49627f2ceeef05637248a62d0b635fd8e350b"
+      "bytes": 2409,
+      "sha256": "72f46a46f0665557e5eb88dd8bf6268e4ce76a6a4a07a6188cf96d7e10d699fd"
     },
     {
       "path": "src/model.test.ts",
