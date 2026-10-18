@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "Three independently runnable basic examples; the complete website is not included",
-  "sourceSha256": "8c091de81c9f05c7282241de3fcad078742ac46776f6ce60033fa265f141cda8",
+  "sourceSha256": "d38d9c3bdf54dca478076e425a4c91dee45e4d91374bd1f717afddc1a3c474bd",
   "files": [
     {
       "path": ".github/workflows/ci.yml",
@@ -32,6 +32,11 @@
       "path": "configs/tabs.json",
       "bytes": 349,
       "sha256": "225929395bbb79baed7015db0bea703b12d756f42aca6903fcf7c5f91fe2add6"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 2850,
+      "sha256": "8e13996da5fd6a50451c44067d36f1af5ddb1c5a737a197b57eb438166ba5c4e"
     },
     {
       "path": "index.html",
@@ -75,8 +80,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 2777,
-      "sha256": "cf8328c1273881224cc56baec6c7dcfd313b3b68150a4a2457ea96f03949200c"
+      "bytes": 7069,
+      "sha256": "9ac4957fc605e61a9b91c2a55c548c2ff0a816c5a23ef928b70fe087d4b82861"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 6557,
+      "sha256": "f5a7fd432896aa6e88356867705b4dcc13a7fcb87271a25204d203cdbcdf676b"
     },
     {
       "path": "src/DemoArrow.tsx",

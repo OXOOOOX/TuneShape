@@ -1,39 +1,124 @@
-# TuneShape · 随形
+# TuneShape
 
-Independently runnable **basic motion examples** for button press feedback, tab transitions and an in-page dialog. [Try the complete online editor](https://kai-nex.com/tuneshape/).
+**English** · [简体中文](README.zh-CN.md)
 
-本仓库只公开三个基础示例、对应配置、Prompt 和必要说明。完整在线编辑器、参数面板、目录、启动动画及高级效果的工程源码不包含在此仓库。历史完整应用发布包已撤下；此前已获取的副本不受此操作控制。
+[![Basic examples CI](https://github.com/orocoa/TuneShape/actions/workflows/ci.yml/badge.svg)](https://github.com/orocoa/TuneShape/actions/workflows/ci.yml) · [MIT License](LICENSE)
 
-## Run
+Configuration-driven UI motion examples built with React, TypeScript, and Motion. Each example includes runnable source, a validated JSON configuration, and a matching implementation Prompt.
 
-Use Node.js >=22.12 and the pnpm version pinned in `package.json`.
+**Website: [kai-nex.com/tuneshape](https://kai-nex.com/tuneshape/)**
+
+[Releases](https://github.com/orocoa/TuneShape/releases) · [Report an issue](https://github.com/orocoa/TuneShape/issues) · [Contributing](CONTRIBUTING.md)
+
+## Overview
+
+TuneShape is a browser-based tool for exploring and adjusting UI motion. The online editor provides the full collection, interactive parameter controls, configuration import and export, and reusable motion specifications.
+
+This repository publishes three self-contained basic examples. They use the same basic interaction renderer as the online editor, with system fonts and a minimal demo layout. The complete website, editor panels, catalog, startup animation, and advanced effect implementations are maintained separately.
+
+## Examples
+
+| Example | Interaction | Configuration | Prompt |
+| --- | --- | --- | --- |
+| Button press feedback | Press and release with a pointer, Space, or Enter | [button.json](configs/button.json) | [button.md](prompts/button.md) |
+| Tab transitions | Switch panels with a pointer or arrow keys; Home and End are supported | [tabs.json](configs/tabs.json) | [tabs.md](prompts/tabs.md) |
+| In-page dialog | Open, close, or dismiss with Escape; focus returns to the trigger | [modal.json](configs/modal.json) | [modal.md](prompts/modal.md) |
+
+The dialog demonstrates an entrance and exit inside the preview area. It uses `aria-modal="false"` and does not trap focus across the application.
+
+## Quick start
+
+### Requirements
+
+- Node.js **22.12 or later**. CI runs on Node.js 24.
+- pnpm **11.x**. Use the exact version declared in [`package.json`](package.json) under `packageManager`.
+
+### Install and run
 
 ```sh
+git clone https://github.com/orocoa/TuneShape.git
+cd TuneShape
 pnpm install --frozen-lockfile
 pnpm dev
 ```
 
+Open the local URL printed by Vite. If you downloaded a release ZIP, extract it and run the last two commands from the directory containing `package.json`.
+
+Package installation requires access to the package registry. Once dependencies are installed, the examples run locally without an account, API key, database, or connection to the TuneShape website.
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `pnpm dev` | Start the local development server |
+| `pnpm test` | Run configuration, validation, and interaction-contract tests |
+| `pnpm build` | Run TypeScript checks and create the static production build in `dist/` |
+| `pnpm preview` | Preview an existing production build locally |
+
+Build before running `pnpm preview`. Deploy the contents of `dist/` to a static web host.
+
+## Configure an example
+
+Select `button`, `tabs`, or `modal` in the demo to load its defaults. To apply an exact configuration:
+
+1. Open **Edit the exact configuration**.
+2. Paste a complete configuration from `configs/` or a schema version 1 export from the online editor.
+3. Select **Apply configuration**.
+
+The configuration includes the component type, so applying it selects the corresponding example. You can also edit [`config.json`](config.json) before starting or building to set the initial example. Selecting another example in the navigation loads that example's defaults.
+
+Supported settings include tween and spring transitions, delay, easing, transform values, and physical spring parameters. Invalid or incompatible configurations are rejected with a validation message. The playback control supports pause and resume; the examples respond to live `prefers-reduced-motion` changes.
+
+## Reproduce an example with its Prompt
+
+Each file in [`prompts/`](prompts/) contains the interaction rules, exact JSON configuration, and Motion state and transition contract for the corresponding example in [`configs/`](configs/).
+
+1. Choose the matching configuration and Prompt from the table above.
+2. Use the Prompt together with this repository's implementation and supporting modules.
+3. Apply the Prompt's **Exact configuration** to the demo or save it as `config.json`.
+4. Run `pnpm test` and `pnpm build`.
+5. Check pointer and keyboard input, repeated input, animation interruption, pause/resume, and reduced motion in the browser.
+
+The included source and validated configuration define the reference behavior. AI-generated implementations should be checked against that contract; natural-language input alone does not guarantee identical generated code. The examples reproduce the basic interaction and parameters using the simplified styling in this package.
+
+## Source guide
+
+| Path | Responsibility |
+| --- | --- |
+| [`src/main.tsx`](src/main.tsx) | Demo navigation, JSON editor, and playback controls |
+| [`src/Preview.tsx`](src/Preview.tsx) | Button, tabs, and dialog rendering and interaction |
+| [`src/model.ts`](src/model.ts) | Configuration validation, state mapping, and Motion specifications |
+| [`src/easing.ts`](src/easing.ts) | Easing validation and evaluation |
+| [`src/useDetailPlayback.ts`](src/useDetailPlayback.ts) | Playback state and animation-clock control |
+| [`src/usePrefersReducedMotion.ts`](src/usePrefersReducedMotion.ts) | Live system motion-preference handling |
+| [`src/model.test.ts`](src/model.test.ts) | Configuration round trips, boundaries, and interaction contracts |
+| [`src/style.css`](src/style.css) | System-font demo styling and responsive layout |
+| `configs/` / `prompts/` | Matching configuration snapshots and implementation Prompts |
+
+## Release integrity
+
+GitHub release archives include `SOURCE_MANIFEST.json`, which records the exported files, byte lengths, and SHA-256 hashes. Its own hash is excluded to avoid a circular digest. Each release also provides `SHA256SUMS.txt` for its ZIP archive.
+
+Download the ZIP and checksum file into the same directory, then verify the archive:
+
 ```sh
-pnpm test
-pnpm build
-pnpm preview
+# macOS
+shasum -a 256 -c SHA256SUMS.txt
 ```
 
-No account, API key, database, CDN or TuneShape service is required. The build is a static site. The link to the online editor is optional.
+```sh
+# Linux
+sha256sum -c SHA256SUMS.txt
+```
 
-## Reproduce and inspect
+The manifest describes the published snapshot. Local edits to a listed file will change its hash.
 
-- `src/Preview.tsx` is the same basic interaction renderer used by the online editor; `src/model.ts` and `src/easing.ts` define validated parameters, state mapping and transitions. Supporting playback and reduced-motion hooks are included.
-- Choose button, tabs or modal in the demo. Edit `config.json` before starting, or paste a schemaVersion 1 configuration into the demo's JSON editor. Observation speed is not persisted.
-- `configs/` and `prompts/` contain matching default snapshots for all three components. Prompt files reference the exact included implementation; do not claim a natural-language prompt alone guarantees identical generated code.
-- `SOURCE_MANIFEST.json` lists exported files and SHA-256 checksums. Its own checksum is omitted to avoid a circular digest.
-- Examples use system fonts and a small demo stylesheet. They reproduce the basic interaction and parameters, not the complete online editor's fonts, panel UI or page layout.
-- Pointer cancellation, keyboard activation, tab arrow navigation, dialog close/Escape, animation interruption, pause/resume and live reduced-motion preferences are retained. This dialog is an **in-page demonstration** (`aria-modal=false`), not an application-wide modal/focus trap.
+## Contributing
 
-## Public scope and license
+Bug reports and focused improvements to the public examples are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow and verification steps. Issues and pull requests may be written in English or Chinese.
 
-Only files included in this repository are offered here under MIT; see `LICENSE`. React, React DOM, Motion and development dependencies retain their upstream licenses. No third-party reference artwork or bundled fonts are included. User-provided content retains its own rights.
+## License
 
-Local operational records, deployment configuration and the complete website are outside this repository. Future updates publish this allowlisted example package, never a recursive copy of the local application or its Git history.
+The source and documentation in this repository are available under the [MIT License](LICENSE). React, React DOM, Motion, and development dependencies retain their upstream licenses.
 
-公开示例可独立运行并检查实现；高级效果的在线配置、规格和离线 HTML 是另外的复用方式，不能据此声称完整网站工程已开源。
+The examples use system fonts and include no reference artwork, bundled fonts, private operational records, or deployment configuration. This repository's license applies to the files published here; website assets and other third-party materials retain their respective licenses.
