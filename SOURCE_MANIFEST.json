@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "scope": "Three independently runnable basic examples; the complete website is not included",
+  "sourceSha256": "e89a6f90e1453c5a18e10d2cc7be4f5c0b66ce51325f16015502e2d34550eec1",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 360,
+      "sha256": "05fcaa28e433878ff2d977655a7ec6dd4a302e580d7cc09b338dea318a3eca58"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 42,
+      "sha256": "ac7d896c831737852a63915c4b2db6acc423d7de944eee85a88a2b7c65afb65f"
+    },
+    {
+      "path": "config.json",
+      "bytes": 351,
+      "sha256": "10280966891161ac50f6ec216953718c320f0617b1b2f51eb3efcdece307ff37"
+    },
+    {
+      "path": "configs/button.json",
+      "bytes": 351,
+      "sha256": "10280966891161ac50f6ec216953718c320f0617b1b2f51eb3efcdece307ff37"
+    },
+    {
+      "path": "configs/modal.json",
+      "bytes": 351,
+      "sha256": "0864ba6127cab1f2018e66e0a41989c9501dced71ba29a4164487af6fe92f499"
+    },
+    {
+      "path": "configs/tabs.json",
+      "bytes": 349,
+      "sha256": "225929395bbb79baed7015db0bea703b12d756f42aca6903fcf7c5f91fe2add6"
+    },
+    {
+      "path": "index.html",
+      "bytes": 269,
+      "sha256": "62e13b15361ae2cfe3d7bdfc54fc343031ddf3b1c694f8d44f8e1f9bbdf704b4"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1079,
+      "sha256": "3e7cc38c25d1863c0e9fbfa88e2af8a778ecfbe1a4236af2911984aeecff4f76"
+    },
+    {
+      "path": "package.json",
+      "bytes": 671,
+      "sha256": "accab36d9f58784bf2292bfa58a3c1c1dd85da23854bfb3dce9d632ea7318903"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 33548,
+      "sha256": "b0613e4e77f3fa1c50d194c803aedf1c061cbd24c554854a15198591de641850"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 93,
+      "sha256": "c9271057345d3afbfe81817e2ff6d6ff1b8b9198bb7560783b1440166e011fc6"
+    },
+    {
+      "path": "prompts/button.md",
+      "bytes": 3492,
+      "sha256": "a0e66ec2a08d2510ad8e1a55572fd128f8d08291f01e26641b607ae46ef07cbf"
+    },
+    {
+      "path": "prompts/modal.md",
+      "bytes": 3885,
+      "sha256": "d12f1f9350c7e6a1ce938aea0211ec2c62caaea355fd3e891296e8c8c3ad9532"
+    },
+    {
+      "path": "prompts/tabs.md",
+      "bytes": 3848,
+      "sha256": "99f5be700e84fcce76cab90c1184fa068814007f44fcf6e7f7ba80b57c3aa10e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2777,
+      "sha256": "cf8328c1273881224cc56baec6c7dcfd313b3b68150a4a2457ea96f03949200c"
+    },
+    {
+      "path": "src/DemoArrow.tsx",
+      "bytes": 456,
+      "sha256": "41f0b109b3825d718403bb31dc7fb5b5168fef1e44ae3eee8553bbd9bd82e065"
+    },
+    {
+      "path": "src/easing.ts",
+      "bytes": 15519,
+      "sha256": "c454525828af5b2f19e532bbcd4960aafa2fd0e56423d7422e7061ecf55c79d2"
+    },
+    {
+      "path": "src/effect-terms.ts",
+      "bytes": 514,
+      "sha256": "37ea7a4bc1aecdf70dd270da8d9b3615221f1a168ba5e77c259d185a2a5eae5c"
+    },
+    {
+      "path": "src/i18n.ts",
+      "bytes": 257,
+      "sha256": "c779ae48883e3072e1cb304a954b6fc528bc07cbb1be42cc97f3ac539567f718"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 2386,
+      "sha256": "6230a3659058021d41cf638c6eb49627f2ceeef05637248a62d0b635fd8e350b"
+    },
+    {
+      "path": "src/model.test.ts",
+      "bytes": 10476,
+      "sha256": "b4430d858999c67b767025f4685163f62bef51d881c0187f8180914ccfb16568"
+    },
+    {
+      "path": "src/model.ts",
+      "bytes": 14067,
+      "sha256": "e37f8627ef994f1b4c388095d5526388ae93f6f76f5acbe1c1b11be35b6c04db"
+    },
+    {
+      "path": "src/Preview.tsx",
+      "bytes": 15233,
+      "sha256": "06b0bb05b3e26752314686660d43613fd0dfa022ee3ca4d86ab18f3132a58199"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 3787,
+      "sha256": "8fa031410cb909aa7c919d3959da903ded5cde270ef9f0e1c63d99acb9dc5211"
+    },
+    {
+      "path": "src/useDetailPlayback.ts",
+      "bytes": 3603,
+      "sha256": "1be4984fd0a7a5367a6c6afe8ec64ba7904b87cda558fb2280e94c698eac6b7c"
+    },
+    {
+      "path": "src/usePrefersReducedMotion.ts",
+      "bytes": 603,
+      "sha256": "90765d93304e9a466b70b7a64add1d9619247c9a3702742a65f6cd9bf93ccc90"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "bytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 534,
+      "sha256": "48dbfd6ab5adcad8bd8a5ec811c8f4d79592b5d301f44a3950d9cb68fce60234"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 77,
+      "sha256": "42590cd7082fd85e14624332a1d966eb8bcc65333b4efdf9bd46ade8a0f67968"
+    }
+  ]
+}
