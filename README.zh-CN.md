@@ -1,12 +1,12 @@
-# TuneShape · 随形
+# TuneShape · 随形 — React UI 动效示例
 
 [English](README.md) · **简体中文**
 
 [![基础示例 CI](https://github.com/orocoa/TuneShape/actions/workflows/ci.yml/badge.svg)](https://github.com/orocoa/TuneShape/actions/workflows/ci.yml) · [MIT 许可证](LICENSE)
 
-基于 React、TypeScript 和 Motion 的配置驱动 UI 动效示例。每个示例均提供可运行源码、经过校验的 JSON 配置，以及与之对应的实现 Prompt。
+3 个基于 React、TypeScript 和 Motion 的基础 UI 动效示例：按钮按压反馈、Tab 切换和页内对话框。每个示例均提供可运行源码、经过校验的 JSON 配置，以及与之对应的实现 Prompt。
 
-**网站地址：[kai-nex.com/tuneshape](https://kai-nex.com/tuneshape/)**
+**[在线调整 UI 动效](https://kai-nex.com/tuneshape/)** · [运行 3 个公开示例](#快速开始)
 
 [版本发布](https://github.com/orocoa/TuneShape/releases) · [反馈问题](https://github.com/orocoa/TuneShape/issues) · [参与贡献](CONTRIBUTING.md)
 

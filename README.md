@@ -1,12 +1,12 @@
-# TuneShape
+# TuneShape — React UI Motion Examples
 
 **English** · [简体中文](README.zh-CN.md)
 
 [![Basic examples CI](https://github.com/orocoa/TuneShape/actions/workflows/ci.yml/badge.svg)](https://github.com/orocoa/TuneShape/actions/workflows/ci.yml) · [MIT License](LICENSE)
 
-Configuration-driven UI motion examples built with React, TypeScript, and Motion. Each example includes runnable source, a validated JSON configuration, and a matching implementation Prompt.
+Three basic UI motion examples for React, TypeScript, and Motion: button press feedback, tab transitions, and an in-page dialog. Each example includes runnable source, a validated JSON configuration, and a matching implementation prompt.
 
-**Website: [kai-nex.com/tuneshape](https://kai-nex.com/tuneshape/)**
+**[Try the online UI motion editor](https://kai-nex.com/tuneshape/)** · [Run the 3 public examples](#quick-start)
 
 [Releases](https://github.com/orocoa/TuneShape/releases) · [Report an issue](https://github.com/orocoa/TuneShape/issues) · [Contributing](CONTRIBUTING.md)
 
