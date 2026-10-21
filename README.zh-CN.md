@@ -12,6 +12,10 @@ TuneShape · 随形，由 [orocoa](https://github.com/orocoa) 维护，提供 3 
 
 [版本发布](https://github.com/orocoa/TuneShape/releases) · [反馈问题](https://github.com/orocoa/TuneShape/issues) · [参与贡献](CONTRIBUTING.md)
 
+![TuneShape 基础示例：按钮按压与释放反馈](docs/preview-button-press.gif)
+
+录自本仓库的基础示例：按住按钮，再松开回到初始状态。
+
 ## 项目介绍
 
 TuneShape，中文名「随形」，取意“随物赋形”，是用于浏览和调整 UI 动效的网页工具。在线编辑器提供完整动效目录、交互式参数调整、配置导入导出，以及可复用的动效规格。

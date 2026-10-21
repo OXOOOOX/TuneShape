@@ -12,6 +12,10 @@ TuneShape by [orocoa](https://github.com/orocoa) provides three basic UI motion 
 
 [Releases](https://github.com/orocoa/TuneShape/releases) · [Report an issue](https://github.com/orocoa/TuneShape/issues) · [Contributing](CONTRIBUTING.md)
 
+![Button press feedback (TuneShape basic example)](docs/preview-button-press.gif)
+
+Captured from this repository's basic example: hold the button, then release to return to its resting state.
+
 ## Overview
 
 TuneShape is a browser-based tool for exploring and adjusting UI motion. The online editor provides the full collection, interactive parameter controls, configuration import and export, and reusable motion specifications.
