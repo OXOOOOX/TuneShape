@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "Three independently runnable basic examples; the complete website is not included",
-  "sourceSha256": "a7dc707402897929953c7c5b6094016c752ce17f68d66e3cafd7b93ea6c9223b",
+  "sourceSha256": "f8b5ea85d479e3b4a54ce62a91d8cda85c632990d78312aa3d1d8a80178d1b93",
   "files": [
     {
       "path": ".github/workflows/ci.yml",
@@ -80,13 +80,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 7757,
-      "sha256": "5816690f91a1bce996471a2f94744b2ac1de05bb117acaa02052b28b22d2b67d"
+      "bytes": 7815,
+      "sha256": "ee3d4c6e327a2fcdd06cc6e029c4bd29b8c41216e11af2163ea1f3e47fa28893"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 7226,
-      "sha256": "52d7c212ba120df38e1ac2e9f557b91c9128c168b794c2c37a208764af2397f3"
+      "bytes": 7304,
+      "sha256": "d41d1ad7876595d8d298026a5479b6719f136291be7669663b3408912b3cfd3d"
     },
     {
       "path": "src/DemoArrow.tsx",

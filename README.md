@@ -4,7 +4,7 @@
 
 [![Basic examples CI](https://github.com/orocoa/TuneShape/actions/workflows/ci.yml/badge.svg)](https://github.com/orocoa/TuneShape/actions/workflows/ci.yml) · [MIT License](LICENSE)
 
-Three basic UI motion examples for React, TypeScript, and Motion: button press feedback, tab transitions, and an in-page dialog. Each example includes runnable source, a validated JSON configuration, and a matching implementation prompt.
+TuneShape by [orocoa](https://github.com/orocoa) provides three basic UI motion examples for React, TypeScript, and Motion: button press feedback, tab transitions, and an in-page dialog. Each example includes runnable source, a validated JSON configuration, and a matching implementation prompt.
 
 **[Try the online UI motion editor](https://kai-nex.com/tuneshape/)** · [Run the 3 public examples](#quick-start)
 
