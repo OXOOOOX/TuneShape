@@ -12,8 +12,9 @@
 
 [版本发布](https://github.com/orocoa/TuneShape/releases) · [反馈问题](https://github.com/orocoa/TuneShape/issues) · [参与贡献](CONTRIBUTING.md)
 
-<!-- 动效预览：有 GIF 后改为图片 -->
-> **待补素材：** 按钮按压示例短 GIF（指针按下/抬起）。规格：≤2.5MB，约 800×500 或 16:9，1–2 秒循环。路径：`docs/preview-button-press.gif`。
+![TuneShape 基础示例：按钮按压与释放反馈](docs/preview-button-press.gif)
+
+录自本仓库的基础示例：按住按钮，再松开回到初始状态。
 
 ## 项目介绍
 

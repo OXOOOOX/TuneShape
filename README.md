@@ -12,13 +12,9 @@ Three basic UI motion examples for React, TypeScript, and Motion: button press f
 
 [Releases](https://github.com/orocoa/TuneShape/releases) · [Report an issue](https://github.com/orocoa/TuneShape/issues) · [Contributing](CONTRIBUTING.md)
 
-<!-- Hero motion preview: replace this comment with the image once the GIF exists.
 ![Button press feedback (TuneShape basic example)](docs/preview-button-press.gif)
--->
 
-> **Preview asset needed:** short GIF of the **button press** example (pointer down/up).  
-> Spec: ≤ 2.5 MB, ~800×500 or 16:9, 1–2s loop, no audio. Export from local `pnpm dev` or the online editor.  
-> Target path: [`docs/preview-button-press.gif`](docs/preview-button-press.gif).
+Captured from this repository's basic example: hold the button, then release to return to its resting state.
 
 ## Overview
 
