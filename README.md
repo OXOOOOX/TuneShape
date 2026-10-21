@@ -8,6 +8,8 @@ Three basic UI motion examples for React, TypeScript, and Motion: button press f
 
 **[Try the online UI motion editor](https://kai-nex.com/tuneshape/)** · [Run the 3 public examples](#quick-start)
 
+[About TuneShape](https://kai-nex.com/tuneshape/en/about/) · [中文项目介绍](https://kai-nex.com/tuneshape/about/) · [Interactive examples](https://kai-nex.com/tuneshape/effects/) · [Usage guides (Chinese)](https://kai-nex.com/tuneshape/guides/)
+
 [Releases](https://github.com/orocoa/TuneShape/releases) · [Report an issue](https://github.com/orocoa/TuneShape/issues) · [Contributing](CONTRIBUTING.md)
 
 ## Overview
@@ -15,6 +17,10 @@ Three basic UI motion examples for React, TypeScript, and Motion: button press f
 TuneShape is a browser-based tool for exploring and adjusting UI motion. The online editor provides the full collection, interactive parameter controls, configuration import and export, and reusable motion specifications.
 
 This repository publishes three self-contained basic examples. They use the same basic interaction renderer as the online editor, with system fonts and a minimal demo layout. The complete website, editor panels, catalog, startup animation, and advanced effect implementations are maintained separately.
+
+## Project name and links
+
+The project name is **TuneShape**. If you searched for **TurnShape** while looking for this UI motion tool, use the website above and this `orocoa/TuneShape` repository to confirm the project. The repository publishes basic examples; the full online editor is maintained separately.
 
 ## Examples
 

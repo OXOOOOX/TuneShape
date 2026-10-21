@@ -8,6 +8,8 @@
 
 **[在线调整 UI 动效](https://kai-nex.com/tuneshape/)** · [运行 3 个公开示例](#快速开始)
 
+[关于 TuneShape](https://kai-nex.com/tuneshape/about/) · [English introduction](https://kai-nex.com/tuneshape/en/about/) · [在线交互示例](https://kai-nex.com/tuneshape/effects/) · [使用指南](https://kai-nex.com/tuneshape/guides/)
+
 [版本发布](https://github.com/orocoa/TuneShape/releases) · [反馈问题](https://github.com/orocoa/TuneShape/issues) · [参与贡献](CONTRIBUTING.md)
 
 ## 项目介绍
@@ -15,6 +17,10 @@
 TuneShape，中文名「随形」，取意“随物赋形”，是用于浏览和调整 UI 动效的网页工具。在线编辑器提供完整动效目录、交互式参数调整、配置导入导出，以及可复用的动效规格。
 
 本仓库公开三个可独立运行的基础示例，沿用在线编辑器的基础交互渲染器，并使用系统字体和简洁的演示布局。完整网站、编辑器面板、目录、启动动画和高级效果实现由独立工程维护。
+
+## 名称与项目入口
+
+项目正式名称为 **TuneShape**，中文名是「随形」。如果你搜索 **TurnShape / turnshape** 想寻找这个 UI 动效工具，请以以上官网地址和 `orocoa/TuneShape` 仓库确认项目。公开仓库提供基础示例，完整在线编辑器由独立工程维护。
 
 ## 基础示例
 
