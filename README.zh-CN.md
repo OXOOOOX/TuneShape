@@ -12,6 +12,9 @@
 
 [版本发布](https://github.com/orocoa/TuneShape/releases) · [反馈问题](https://github.com/orocoa/TuneShape/issues) · [参与贡献](CONTRIBUTING.md)
 
+<!-- 动效预览：有 GIF 后改为图片 -->
+> **待补素材：** 按钮按压示例短 GIF（指针按下/抬起）。规格：≤2.5MB，约 800×500 或 16:9，1–2 秒循环。路径：`docs/preview-button-press.gif`。
+
 ## 项目介绍
 
 TuneShape，中文名「随形」，取意“随物赋形”，是用于浏览和调整 UI 动效的网页工具。在线编辑器提供完整动效目录、交互式参数调整、配置导入导出，以及可复用的动效规格。
