@@ -16,6 +16,14 @@ TuneShape · 随形，由 [orocoa](https://github.com/orocoa) 维护，提供 3 
 
 录自本仓库的基础示例：按住按钮，再松开回到初始状态。
 
+## 社区示例：闪电岛
+
+[闪电岛 UI](docs/lightning-island.md) 由 [OXOOOOX](https://github.com/OXOOOOX) 提取，沿用「源码 + JSON 配置 + Prompt」的组织方式，包含今日事件卡、LIVE 动态抽屉和纯 CSS 木制更新牌。完成虚构任务后新增一条动态，卡片可折叠再展开；复用现有动效渲染器，无新增依赖或后端。
+
+运行 `pnpm dev` 后选择 **闪电岛 · Lightning Island**（`/#lightning-island`）。[查看源码](src/lightning-island/IslandExamples.tsx) · [配置](configs/lightning-island/) · [提示词](prompts/lightning-island/) · [使用与来源说明](docs/lightning-island.md)。基础示例仍是默认入口。
+
+![闪电岛社区 UI 示例](docs/lightning-island-preview.png)
+
 ## 项目介绍
 
 TuneShape，中文名「随形」，取意“随物赋形”，是用于浏览和调整 UI 动效的网页工具。在线编辑器提供完整动效目录、交互式参数调整、配置导入导出，以及可复用的动效规格。

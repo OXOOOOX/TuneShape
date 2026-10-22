@@ -16,6 +16,14 @@ TuneShape by [orocoa](https://github.com/orocoa) provides three basic UI motion 
 
 Captured from this repository's basic example: hold the button, then release to return to its resting state.
 
+## Community example: Lightning Island
+
+[Lightning Island / 闪电岛](docs/lightning-island.md), contributed by [OXOOOOX](https://github.com/OXOOOOX), adapts a daily event card, LIVE activity drawer and CSS wooden noticeboard to the same source + JSON + Prompt workflow. Complete a fictional task, see one new activity, and collapse or reopen the card. The example uses the existing motion renderer with no additional dependencies or backend.
+
+Run `pnpm dev` and choose **闪电岛 · Lightning Island** (`/#lightning-island`). [Source](src/lightning-island/IslandExamples.tsx) · [Configurations](configs/lightning-island/) · [Prompts](prompts/lightning-island/) · [Guide and attribution](docs/lightning-island.md). The basic examples remain the default view.
+
+![Lightning Island community UI example](docs/lightning-island-preview.png)
+
 ## Overview
 
 TuneShape is a browser-based tool for exploring and adjusting UI motion. The online editor provides the full collection, interactive parameter controls, configuration import and export, and reusable motion specifications.
