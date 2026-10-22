@@ -6,6 +6,10 @@ Three compact cards demonstrate outline highlights, status signals and completio
 
 ## Run / 运行
 
+**[Open the public demo / 打开在线演示](https://lightning-island-ui.liiiillliii.chatgpt.site/#lightning-island)** — hosted by the contributor, with no sign-in or installation required. The link opens the interaction cards directly; **Basic examples** switches to the original examples.
+
+To run locally:
+
 ```sh
 git clone https://github.com/OXOOOOX/TuneShape.git
 cd TuneShape

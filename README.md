@@ -18,6 +18,8 @@ Captured from this repository's basic example: hold the button, then release to 
 
 ## Community example: Lightning Island
 
+**[Try the Lightning Island UI demo](https://lightning-island-ui.liiiillliii.chatgpt.site/#lightning-island)** — public demo hosted by the contributor; no sign-in or installation required.
+
 [Lightning Island / 闪电岛](docs/lightning-island.md), contributed by [OXOOOOX](https://github.com/OXOOOOX), shows outline highlights, status signals and completion feedback in three compact UI cards. Simple SVG and CSS shapes keep the focus on the interaction; no image assets are used. A daily event card, LIVE drawer and update dialog are available in a collapsed composition example. Source, JSON and implementation Prompts are included, with no additional dependencies or backend.
 
 The new filter and looping tracks use a separate `lightning-island-effects` extension and native Web Animations. Its JSON is for the extension source; the basic configuration editor does not support it. The composition's three original motion presets remain compatible with that editor.

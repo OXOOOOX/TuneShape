@@ -18,6 +18,8 @@ TuneShape · 随形，由 [orocoa](https://github.com/orocoa) 维护，提供 3 
 
 ## 社区示例：闪电岛
 
+**[在线体验闪电岛 UI 动效](https://lightning-island-ui.liiiillliii.chatgpt.site/#lightning-island)** — 由贡献者托管的公开演示，无需登录或安装。
+
 [闪电岛 UI](docs/lightning-island.md) 由 [OXOOOOX](https://github.com/OXOOOOX) 提取，用三张紧凑卡片展示轮廓高亮、状态提示和完成反馈。只使用简单 SVG 与 CSS 图形，不加载图片素材；事件卡、LIVE 抽屉和更新弹窗放在默认折叠的组合示例中。沿用「源码 + JSON 配置 + Prompt」的组织方式，无新增依赖或后端。
 
 新增的 filter 与循环轨道采用独立的 `lightning-island-effects` 扩展格式，通过原生 Web Animations 播放。该 JSON 配合扩展源码使用，基础配置编辑器不支持；组合示例原有的三份动效预设仍可在基础编辑器使用。
