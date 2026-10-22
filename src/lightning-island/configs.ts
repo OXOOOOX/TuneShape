@@ -18,5 +18,5 @@ export const updateBoardConfig = readConfig(updateBoard, 'modal')
 export const islandExamples = [
   { id: 'event-button', title: '01 / 今日小事', description: '按住 → 松开 · 120 ms', config: eventButtonConfig },
   { id: 'live-drawer', title: '02 / LIVE 动态', description: '左侧进入 / 退出 · 180 ms', config: liveDrawerConfig },
-  { id: 'update-board', title: '03 / 木制公告牌', description: '上浮与淡入 / 退出 · 160 ms', config: updateBoardConfig },
+  { id: 'update-board', title: '03 / 更新弹窗', description: '上浮与淡入 / 退出 · 160 ms', config: updateBoardConfig },
 ].map(example => ({ ...example, json: serializeConfig(example.config) }))

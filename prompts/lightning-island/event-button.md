@@ -4,13 +4,13 @@ Implement with React, TypeScript and Motion, using the reference in src/lightnin
 
 ## Interaction contract
 
-- Render a cream paper card with a CSS flower symbol, fictional task text and a native button. Use the shared event-button preset for button feedback.
+- Render a compact cream card with a simple text symbol, fictional task text and a native button. Use the shared event-button preset for button feedback. Do not add a scene illustration or image assets.
 - Pointer down and Space/Enter down target active; release targets rest. Pointer cancellation, loss of capture, blur and document hiding release the held state. Releasing outside the button does not complete the task. Keyboard repeat must not duplicate activation.
 - A valid activation completes the local event exactly once. Show 1 / 1 and append one fictional entry to the LIVE list. Never grant a real reward or call a service.
 - The completed card can collapse to a yellow check button and expand again. Move focus to the corresponding visible control. Hidden content is excluded from keyboard navigation.
 - Reset restores the incomplete card, expanded details and initial two activity entries.
 
-All three examples use fictional data and in-memory state. Preserve the blue, cream, ink, coral and yellow palette, 3 px borders and hard shadows. No external art, account, API or storage is required.
+The composition is inside a disclosure that is collapsed by default, beneath the three interaction-effect cards. Its components use fictional data and in-memory state. Preserve the cream, ink, coral and yellow palette, 3 px borders and hard shadows. No external art, account, API or storage is required.
 
 Pause freezes the actual Motion clock and disables new demonstration inputs. Resume continues; reset remains available. Live prefers-reduced-motion changes settle directly to the target with no delay or animation. Never queue repeated inputs. The shared renderer defines the motion; the rules above define the adapted DOM semantics.
 

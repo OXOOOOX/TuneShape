@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import { usePose } from '../Preview'
 import { usePrefersReducedMotion } from '../usePrefersReducedMotion'
 import { eventButtonConfig, islandExamples, liveDrawerConfig, updateBoardConfig } from './configs'
+import InteractionEffects, { LiveSignal } from './InteractionEffects'
 import './style.css'
 
 type PixelButtonProps = AriaAttributes & {
@@ -177,32 +178,26 @@ function IslandPlayground({ paused, reduced }: { paused: boolean; reduced: boole
   }
 
   return <section className={`li-scene${drawerOpen ? ' li-scene-live-open' : ''}`} aria-label="闪电岛 UI 交互预览" data-paused={paused}>
-    <div className="li-scenery" aria-hidden="true">
-      <span className="li-cloud li-cloud-one" /><span className="li-cloud li-cloud-two" />
-      <span className="li-horizon" /><span className="li-ground" />
-      <span className="li-scene-message">小小动作<br /><strong>让岛屿有回应。</strong></span>
-    </div>
-    <span className="li-scene-badge">DEMO ISLAND / 演示数据</span>
+    <div className="li-scene-actions">
+    <span className="li-scene-badge">组件组合 · 演示数据</span>
     <PixelButton ref={liveTrigger} className="li-live-trigger" paused={paused} reduced={reduced}
       aria-expanded={drawerOpen} aria-controls={`${identity}-live`} aria-label="岛上动态 LIVE"
       onActivate={() => drawerOpen ? closeDrawer() : setDrawerOpen(true)}>
-      <span className="li-live-dot" aria-hidden="true" /> LIVE <span className="li-live-count">{activities.length}</span>
+      <LiveSignal paused={paused} reduced={reduced} /> LIVE <span className="li-live-count">{activities.length}</span>
     </PixelButton>
 
     <PixelButton ref={boardTrigger} className="li-board-trigger" paused={paused} reduced={reduced}
       aria-haspopup="dialog" aria-expanded={boardOpen} aria-controls={`${identity}-board`} aria-label="打开岛屿更新看板"
       onActivate={() => { focusBoardOnOpen.current = true; setBoardOpen(true) }}>
-      <span className="li-board-roof" aria-hidden="true" />
-      <span className="li-board-paper" aria-hidden="true"><i /><i /><i /></span>
-      <span className="li-board-sign"><strong>岛屿更新</strong><small>点开看看</small></span>
-      <span className="li-board-pin" aria-hidden="true">!</span>
+      查看更新
     </PixelButton>
-
+    </div>
+    <div className="li-component-panels">
     <section className={`li-event ${collapsed ? 'li-event-collapsed' : 'li-panel'}`} aria-label="今日小事" data-completed={completed}>
       {collapsed ? <PixelButton ref={eventAction} className="li-event-check" paused={paused} reduced={reduced}
         aria-label="展开今日事件详情" aria-expanded={false} aria-controls={`${identity}-event`} onActivate={toggleEvent}>✓</PixelButton> : null}
       <div id={`${identity}-event`} className="li-event-content" hidden={collapsed}>
-        <div className="li-event-glyph" aria-hidden="true"><span className="li-flower">✿</span><span className="li-flower-stem" /></div>
+        <div className="li-event-glyph" aria-hidden="true">{completed ? '✓' : '✦'}</div>
         <div className="li-event-copy">
           <span className="li-kicker">{completed ? '今日已完成' : '今日小事'}</span>
           <h2>{completed ? '花园喝到水啦' : '给花园浇一壶水'}</h2>
@@ -220,7 +215,7 @@ function IslandPlayground({ paused, reduced }: { paused: boolean; reduced: boole
     <motion.div ref={drawer} id={`${identity}-live`} className="li-drawer li-panel" role="region"
       aria-labelledby={`${identity}-live-title`} aria-hidden={!drawerOpen} inert={!drawerOpen}
       data-state={drawerOpen ? 'open' : 'closed'}
-      style={{ x: drawerPose.x, y: drawerPose.y, scale: drawerPose.scale, opacity: drawerPose.opacity, visibility: drawerPose.visible ? 'visible' : 'hidden', pointerEvents: drawerOpen ? 'auto' : 'none' }}>
+      style={{ x: drawerPose.x, y: drawerPose.y, scale: drawerPose.scale, opacity: drawerPose.opacity, display: drawerPose.visible ? 'block' : 'none', pointerEvents: drawerOpen ? 'auto' : 'none' }}>
       <div className="li-panel-heading">
         <div><span className="li-eyebrow">LIVE LOG / 演示数据</span><h2 id={`${identity}-live-title`}>岛上动态</h2></div>
         <PixelButton paused={paused} reduced={reduced} className="li-small-button" onActivate={closeDrawer} aria-label="关闭岛上动态">关闭</PixelButton>
@@ -230,7 +225,7 @@ function IslandPlayground({ paused, reduced }: { paused: boolean; reduced: boole
         <span className="li-activity-time">{activity.time}</span><div><strong>{activity.title}</strong><p>{activity.detail}</p></div>
       </li>)}</ol>
     </motion.div>
-
+    </div>
     <div className="li-board-overlay" style={{ visibility: boardPose.visible ? 'visible' : 'hidden', pointerEvents: boardOpen ? 'auto' : 'none' }}>
       <motion.div className="li-board-backdrop" aria-hidden="true" style={{ opacity: boardPose.opacity }} onClick={closeBoard} />
       <motion.div ref={board} id={`${identity}-board`} className="li-board-dialog li-panel" role="dialog" aria-modal={false}
@@ -240,7 +235,7 @@ function IslandPlayground({ paused, reduced }: { paused: boolean; reduced: boole
           <div><span className="li-eyebrow">WHAT'S NEW / 演示数据</span><h2 id={`${identity}-board-title`}>岛屿更新看板</h2></div>
           <PixelButton ref={boardClose} paused={paused} reduced={reduced} className="li-small-button" onActivate={closeBoard} aria-label="关闭更新看板">×</PixelButton>
         </div>
-        <p id={`${identity}-board-description`} className="li-board-description">一块木头、一张便笺，装下小岛的新鲜事。</p>
+        <p id={`${identity}-board-description`} className="li-board-description">示例公告；打开、关闭与焦点恢复。</p>
         <ol className="li-update-list">
           <li><span>DEMO 03</span><h3>给今日小事一个小小回响</h3><p>完成一次浇水，新增一条本地动态；已完成卡片可收起、再展开。</p></li>
           <li><span>DEMO 02</span><h3>把动态藏进左侧抽屉</h3><p>点一下 LIVE，看看这个虚构小岛发生了什么。</p></li>
@@ -260,31 +255,29 @@ export default function IslandExamples() {
   return <main className="li-page">
     <header className="li-header">
       <p className="li-eyebrow">LIGHTNING ISLAND × TUNESHAPE</p>
-      <h1>把小岛的日常，做成可复用的 UI。</h1>
-      <p className="li-intro">闪电岛的纸卡、动态抽屉与木制公告牌。三个小交互，同一份「源码 + JSON 配置 + Prompt」。</p>
-      <div className="li-tags"><span>React + Motion</span><span>纯 CSS 场景</span><span>演示数据 · 不联网</span></div>
+      <h1>闪电岛 · UI 动效</h1>
+      <p className="li-intro">轮廓高亮、状态提示、完成反馈。看效果，也能带走源码与配置。</p>
     </header>
     <div className="li-toolbar" role="group" aria-label="预览播放控制">
       <button className="li-button" type="button" aria-pressed={paused} onClick={() => setPaused(value => !value)}>{paused ? '继续动效' : '暂停动效'}</button>
       <button className="li-button li-button-quiet" type="button" onClick={() => { setPaused(false); setReset(value => value + 1) }}>重置演示</button>
       <p className="li-playback-status" role="status">{paused ? '已暂停：动画时钟冻结，示例输入暂时停用。' : reduced ? '系统已减少动态效果：直接显示最终状态。' : '试试按住、快速切换，或用 Tab / 空格 / Enter 操作。'}</p>
     </div>
-    <IslandPlayground key={reset} paused={paused} reduced={reduced} />
-    <div className="li-example-notes">
-      <p><b>01</b> 完成今日小事，再把纸卡收成一个对勾。</p>
-      <p><b>02</b> 打开 LIVE，查看新增的本地动态。</p>
-      <p><b>03</b> 点木制公告牌；用关闭按钮、遮罩或 Esc 收起。</p>
-    </div>
+    <InteractionEffects key={`effects-${reset}`} paused={paused} reduced={reduced} />
+    <details className="li-composition">
+      <summary>组合示例：事件卡、动态抽屉、更新弹窗</summary>
+      <IslandPlayground key={reset} paused={paused} reduced={reduced} />
     <section className="li-config-section" aria-labelledby="li-config-title">
-      <div className="li-config-heading"><div><p className="li-eyebrow">TAKE THE MOTION WITH YOU</p><h2 id="li-config-title">把配置带走</h2></div><p>完整 schema v1 JSON，可直接复制到 TuneShape 基础示例的配置编辑器。</p></div>
+      <div className="li-config-heading"><h2 id="li-config-title">基础交互配置</h2><p>这三份 schema v1 JSON 可导入 TuneShape 基础编辑器。</p></div>
       <div className="li-config-grid">{islandExamples.map(example => <details className="li-config-card" key={example.id}>
         <summary><strong>{example.title}</strong><span>{example.description}</span></summary>
         <label className="li-config-label" htmlFor={`li-config-${example.id}`}>完整动效配置</label>
         <textarea id={`li-config-${example.id}`} className="li-config-json" readOnly value={example.json} spellCheck={false} />
         <a className="li-download" href={`data:application/json;charset=utf-8,${encodeURIComponent(example.json + '\n')}`} download={`${example.id}.json`}>下载 {example.id}.json ↓</a>
       </details>)}</div>
-      <p className="li-config-note">抽屉与公告牌复用上游 modal 的显隐姿态。JSON 描述动效参数；布局、交互语义及演示状态由源码与配套 Prompt 定义。</p>
+      <p className="li-config-note">抽屉与弹窗复用上游 modal 的显隐姿态。JSON 描述动效参数；布局、交互语义及演示状态由源码与配套 Prompt 定义。</p>
     </section>
-    <footer className="li-footer">源自闪电岛 UI · 为 TuneShape 提取的独立交互示例 · 无账号、后端或持久化</footer>
+    </details>
+    <footer className="li-footer">源自闪电岛 UI · Source + JSON + Prompt · 全部为本地演示</footer>
   </main>
 }

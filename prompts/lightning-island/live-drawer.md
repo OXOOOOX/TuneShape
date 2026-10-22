@@ -5,13 +5,14 @@ Implement with React, TypeScript and Motion, using the reference in src/lightnin
 ## Interaction contract
 
 - Render a native LIVE trigger with aria-expanded and aria-controls and a named disclosure region. The modal configuration selects hidden/visible transforms only; do not give the drawer a modal role or trap focus.
+- Render the LIVE dot with LiveSignal from src/lightning-island/InteractionEffects.tsx. Its separate 1100 ms stepped loop is defined in the interaction-effects extension, not in the modal JSON below; reduced motion keeps the dot steadily visible.
 - Toggle the drawer from the LIVE trigger. Its close control and Escape close it. If focus was inside the drawer, return focus to LIVE before making the drawer inert.
 - Show two fictional initial activity entries. After the local daily event completes, prepend exactly one completion entry. Derive the count from the displayed list.
 - Retarget repeated toggles from currently rendered values. Hide the region only after exit completes; mark it aria-hidden and inert and disable pointer events at exit start.
 - Use a single Escape coordinator for drawer and board. When both are open, one Escape closes the board only.
 - Keep all positioning within the preview. The narrow layout fits the drawer to the preview width; no viewport-fixed overlay or application navigation is needed.
 
-All three examples use fictional data and in-memory state. Preserve the blue, cream, ink, coral and yellow palette, 3 px borders and hard shadows. No external art, account, API or storage is required.
+The composition is inside a disclosure that is collapsed by default, beneath the three interaction-effect cards. Its components use fictional data and in-memory state. Preserve the cream, ink, coral and yellow palette, 3 px borders and hard shadows. Do not add scene illustrations or image assets. No account, API or storage is required.
 
 Pause freezes the actual Motion clock and disables new demonstration inputs. Resume continues; reset remains available. Live prefers-reduced-motion changes settle directly to the target with no delay or animation. Never queue repeated inputs. The shared renderer defines the motion; the rules above define the adapted DOM semantics.
 

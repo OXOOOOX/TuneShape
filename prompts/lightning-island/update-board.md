@@ -1,17 +1,17 @@
-# Lightning Island · 木制更新牌 / Wooden noticeboard
+# Lightning Island · 更新弹窗 / Update dialog
 
 Implement with React, TypeScript and Motion, using the reference in src/lightning-island/IslandExamples.tsx and its scoped style.css. Reuse src/Preview.tsx usePose, src/model.ts, src/easing.ts, src/useDetailPlayback.ts and src/usePrefersReducedMotion.ts. See docs/lightning-island.md for scope and provenance.
 
 ## Interaction contract
 
-- Build the wooden trigger from scoped CSS: a brown roof, paper strips, a cream sign and a coral exclamation badge. Use the shared event-button preset for its press feedback.
+- Render a compact native update button. Use the shared event-button preset for its press feedback; do not add a wooden sign, scenery or image assets.
 - Opening the board reveals an in-preview dialog with a name and description. Use aria-modal=false; this is not a full application modal and has no global focus trap. Focus the close control on open.
 - Close using the close control, backdrop or Escape. When focus is inside, restore it to the board trigger before exit starts. Use inert and aria-hidden at exit start, but hide visually only after the motion settles.
 - The backdrop opacity follows the dialog opacity. The preset uses a smooth 160 ms tween instead of the source game's stepped CSS entrance.
 - Show only fictional local notices. Do not fetch the source project's releases or copy real user content.
 - One Escape closes only the top open layer, leaving the LIVE drawer state intact. The dialog and backdrop must remain inside the preview and remain usable on narrow screens.
 
-All three examples use fictional data and in-memory state. Preserve the blue, cream, ink, coral and yellow palette, 3 px borders and hard shadows. No external art, account, API or storage is required.
+The composition is inside a disclosure that is collapsed by default, beneath the three interaction-effect cards. Its components use fictional data and in-memory state. Preserve the cream, ink, coral and yellow palette, 3 px borders and hard shadows. No external art, account, API or storage is required. The update-board filename is retained for configuration compatibility.
 
 Pause freezes the actual Motion clock and disables new demonstration inputs. Resume continues; reset remains available. Live prefers-reduced-motion changes settle directly to the target with no delay or animation. Never queue repeated inputs. The shared renderer defines the motion; the rules above define the adapted DOM semantics.
 

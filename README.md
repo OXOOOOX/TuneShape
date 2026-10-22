@@ -18,7 +18,9 @@ Captured from this repository's basic example: hold the button, then release to 
 
 ## Community example: Lightning Island
 
-[Lightning Island / 闪电岛](docs/lightning-island.md), contributed by [OXOOOOX](https://github.com/OXOOOOX), adapts a daily event card, LIVE activity drawer and CSS wooden noticeboard to the same source + JSON + Prompt workflow. Complete a fictional task, see one new activity, and collapse or reopen the card. The example uses the existing motion renderer with no additional dependencies or backend.
+[Lightning Island / 闪电岛](docs/lightning-island.md), contributed by [OXOOOOX](https://github.com/OXOOOOX), shows outline highlights, status signals and completion feedback in three compact UI cards. Simple SVG and CSS shapes keep the focus on the interaction; no image assets are used. A daily event card, LIVE drawer and update dialog are available in a collapsed composition example. Source, JSON and implementation Prompts are included, with no additional dependencies or backend.
+
+The new filter and looping tracks use a separate `lightning-island-effects` extension and native Web Animations. Its JSON is for the extension source; the basic configuration editor does not support it. The composition's three original motion presets remain compatible with that editor.
 
 Run `pnpm dev` and choose **闪电岛 · Lightning Island** (`/#lightning-island`). [Source](src/lightning-island/IslandExamples.tsx) · [Configurations](configs/lightning-island/) · [Prompts](prompts/lightning-island/) · [Guide and attribution](docs/lightning-island.md). The basic examples remain the default view.
 
@@ -80,7 +82,7 @@ Build before running `pnpm preview`. Deploy the contents of `dist/` to a static 
 Select `button`, `tabs`, or `modal` in the demo to load its defaults. To apply an exact configuration:
 
 1. Open **Edit the exact configuration**.
-2. Paste a complete configuration from `configs/` or a schema version 1 export from the online editor.
+2. Paste a complete basic configuration such as `configs/button.json`, `configs/tabs.json` or `configs/modal.json`, or a compatible schema version 1 export from the online editor.
 3. Select **Apply configuration**.
 
 The configuration includes the component type, so applying it selects the corresponding example. You can also edit [`config.json`](config.json) before starting or building to set the initial example. Selecting another example in the navigation loads that example's defaults.
@@ -89,7 +91,7 @@ Supported settings include tween and spring transitions, delay, easing, transfor
 
 ## Reproduce an example with its Prompt
 
-Each file in [`prompts/`](prompts/) contains the interaction rules, exact JSON configuration, and Motion state and transition contract for the corresponding example in [`configs/`](configs/).
+The three basic files in [`prompts/`](prompts/) contain the interaction rules, exact JSON configuration, and Motion state and transition contract for the corresponding examples in [`configs/`](configs/). For the separate Lightning Island extension, follow its [Prompt](prompts/lightning-island/interaction-effects.md) and source instead of the basic-editor steps below.
 
 1. Choose the matching configuration and Prompt from the table above.
 2. Use the Prompt together with this repository's implementation and supporting modules.
